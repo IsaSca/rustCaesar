@@ -1,10 +1,7 @@
 mod cipher_decipher;
 
 use std::io;
-use std::io::{BufRead, Read};
-
 use cipher_decipher::encipher;
-use std::fs::read;
 use crate::cipher_decipher::decipher;
 
 fn main() {
@@ -18,7 +15,7 @@ fn main() {
     if choice.eq(&decipher) {
         user_choice(decipher);
     } else if choice.eq(&encipher) {
-        user_choice((encipher));
+        user_choice(encipher);
     } else {
         println!("That's all folks!");
     }
