@@ -24,3 +24,19 @@ pub(crate) fn decipher(ciphertext: &str, rotation: u8) -> String {
     }
     plaintext.into_iter().collect()
 }
+
+pub(crate) fn rolling_cipher(plaintext: &str, rotations: &[u8]) -> Vec<String> {
+    let mut ciphertext = Vec::new();
+    for &rot in rotations {
+        ciphertext.push(encipher(plaintext, rot))
+    }
+    ciphertext
+}
+
+pub(crate) fn rolling_decipher(ciphertext: &str, rotations: &[u8]) -> Vec<String> {
+    let mut plaintext = Vec::new();
+    for &rot in rotations {
+        plaintext.push(decipher(ciphertext, rot))
+    }
+    plaintext
+}
