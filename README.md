@@ -1,2 +1,2 @@
 # rustCaesar
-MD5 manually implemented in rust.
+Caesar manually implemented in rust.
